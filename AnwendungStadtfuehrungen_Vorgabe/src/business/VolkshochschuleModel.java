@@ -14,15 +14,7 @@ public class VolkshochschuleModel {
 
 	Volkshochschulkurs volkshochschulkurs;
 	private Volkshochschulkurs[] kurse= new Volkshochschulkurs[100];
-	private int anzahlKurse;
-	
-	public int getAnzahlKurse() {
-        return anzahlKurse;
-    }
-
-    public void setAnzahlKurse(int anzahlKurse) {
-        this.anzahlKurse = anzahlKurse;
-    }
+	//private int anzahlKurse;
 	
 	public Volkshochschulkurs getVolkshochschulkurs() {
 		return volkshochschulkurs;
@@ -47,32 +39,15 @@ public class VolkshochschuleModel {
 	public void leseAusCsvDatei() throws IOException {
         ReaderCreator readerCreator = new ConcreteReaderCreator();
         ReaderProduct reader = readerCreator.factoryMethod("csv");
-
-        Volkshochschulkurs[] geleseneKurse = reader.leseAusDatei();
-
-        this.anzahlKurse = geleseneKurse.length;
-        for (int i = 0; i < anzahlKurse; i++) {
-            this.kurse[i] = geleseneKurse[i];
-        }
-
-        if (anzahlKurse > 0) {
-            this.volkshochschulkurs = kurse[0];
-        }
-    }
+        this.kurse=reader.leseAusDatei();
+	}
+   
 	
 	public void leseAusTxtDatei() throws IOException {
         ReaderCreator readerCreator = new ConcreteReaderCreator();
         ReaderProduct reader = readerCreator.factoryMethod("txt");
+        this.kurse=reader.leseAusDatei();
 
-        Volkshochschulkurs[] geleseneKurse = reader.leseAusDatei();
-
-        this.anzahlKurse = geleseneKurse.length;
-        for (int i = 0; i < anzahlKurse; i++) {
-            this.kurse[i] = geleseneKurse[i];
-        }
-
-        if (anzahlKurse > 0) {
-            this.volkshochschulkurs = kurse[0];
-        }
+    
     }
 }
