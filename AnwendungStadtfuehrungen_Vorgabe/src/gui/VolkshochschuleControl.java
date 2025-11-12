@@ -1,3 +1,4 @@
+
 package gui;
 
 
@@ -23,15 +24,19 @@ public class VolkshochschuleControl {
       		if("csv".equals(typ)){
       			model.schreibeVolkshochschulenInCsvDatei();
       		}
-      		else if("txtimport".equals(typ)) {
-      			model.leseVolkshochschuleAusTxtDatei();
-      			view.zeigeFehlermeldungsfensterAn(
-      					"Erfolgreich gelesen!");
+      		else if("csvimport".equals(typ)) {
+      			model.leseVolkshochschuleAusCsvDatei();
+      			view.zeigeInformationsfensterAn(
+    	   				"erfolgreich gelesen!");
       		}
-       		else if("csvimport".equals(typ)){
-	   			model.leseVolkshochschuleAusCsvDatei();
-	   			view.zeigeFehlermeldungsfensterAn(
-      					"Erfolgreich gelesen!");
+      		else if ("txtimport".equals(typ)) {
+      			model.leseVolkshochschuleAusTxtDatei();
+      			view.zeigeInformationsfensterAn(
+    	   				"erfolgreich gelesen!");
+      		}
+       		else{
+	   			view.zeigeInformationsfensterAn(
+	   				"Noch nicht implementiert!");
 	   		}
 		}
 		catch(IOException exc){

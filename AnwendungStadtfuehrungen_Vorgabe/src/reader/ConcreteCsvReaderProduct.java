@@ -1,4 +1,4 @@
-package readers;
+package reader;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -7,9 +7,11 @@ import java.io.IOException;
 import business.Volkshochschulkurs;
 
 public class ConcreteCsvReaderProduct extends ReaderProduct {
+	
+	
 
 	@Override
-	public Volkshochschulkurs[] leseAusDatei() throws IOException {
+	public Volkshochschulkurs[] leseAusdatei() throws IOException {
 		
 		BufferedReader ein=new BufferedReader(new FileReader ("VolkshochschulkurseAusgabe.csv"));
 		Volkshochschulkurs[] kurse=new Volkshochschulkurs[100];
@@ -25,6 +27,12 @@ public class ConcreteCsvReaderProduct extends ReaderProduct {
 		        Float.parseFloat(daten[3]),
 		        daten[4].split(",")
 		    );
+		    /*System.out.println("Gelesener Kurs:");
+		    System.out.println("Name: " + daten[0]);
+		    System.out.println("Beitrag: " + daten[1]);
+		    System.out.println("Wochentag: " + daten[2]);
+		    System.out.println("Startuhrzeit: " + daten[3]);
+		    System.out.println("Vorkenntnisse: " + daten[4]);*/
 		    anzahl++;
 		}
 

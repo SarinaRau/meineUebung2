@@ -1,19 +1,19 @@
 package business;
 
 
+
 import java.io.IOException;
 
-import readers.ConcreteReaderCreator;
+import reader.ConcreteReaderCreator;
+import reader.ReaderCreator;
+import reader.ReaderProduct;
+import writer.ConcreteCreator;
 import writer.Creator;
 import writer.Product;
-import writer.ConcreteCreator;
-import readers.ReaderCreator;
-import readers.ReaderProduct;
-
 public class VolkshochschuleModel {
 
 	Volkshochschulkurs volkshochschulkurs;
-	Volkshochschulkurs[] kurs=new Volkshochschulkurs[100];
+	Volkshochschulkurs[]kurs;
 	
 	public Volkshochschulkurs getVolkshochschulkurs() {
 		return volkshochschulkurs;
@@ -27,25 +27,24 @@ public class VolkshochschuleModel {
 		
 			Creator creator=new ConcreteCreator();
 			Product writer=creator.factoryMethod();
-			writer.fuegeDateiHinzu(volkshochschulkurs);
-			writer.schliesseDatei();
-   			
+			writer.fuegeInDateiHinzu(volkshochschulkurs);
+			writer.schliesseDatei();  			
 		
 	}
 	
-	public void leseVolkshochschuleAusCsvDatei()throws IOException {
+	public void leseVolkshochschuleAusCsvDatei()throws IOException{
 		
 		ReaderCreator readercreator=new ConcreteReaderCreator();
 		ReaderProduct reader=readercreator.factoryMethod("csv");
-		this.kurs=reader.leseAusDatei();
-		
+		this.kurs=reader.leseAusdatei();
 		
 	}
 	
-	public void leseVolkshochschuleAusTxtDatei()throws IOException {
+	public void leseVolkshochschuleAusTxtDatei()throws IOException{
+		
 		ReaderCreator readercreator=new ConcreteReaderCreator();
 		ReaderProduct reader=readercreator.factoryMethod("txt");
-		this.kurs=reader.leseAusDatei();
+		this.kurs=reader.leseAusdatei();
 		
 	}
 }

@@ -6,7 +6,7 @@ import business.Volkshochschulkurs;
 
 public abstract class Product {
 	
-	public abstract void fuegeDateiHinzu(Volkshochschulkurs kurs)throws IOException;
+	public abstract void fuegeInDateiHinzu(Volkshochschulkurs kurs)throws IOException;
 	public abstract void schliesseDatei()throws IOException;
 
 }

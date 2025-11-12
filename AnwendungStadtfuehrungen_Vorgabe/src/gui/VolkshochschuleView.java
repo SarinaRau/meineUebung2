@@ -1,6 +1,8 @@
+
 package gui;
 
 import business.VolkshochschuleModel;
+import business.Volkshochschulkurs;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;

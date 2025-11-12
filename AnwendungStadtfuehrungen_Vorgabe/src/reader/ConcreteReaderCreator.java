@@ -1,4 +1,4 @@
-package readers;
+package reader;
 
 public class ConcreteReaderCreator extends ReaderCreator {
 
