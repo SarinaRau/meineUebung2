@@ -1,7 +1,6 @@
 package gui;
 
 import business.VolkshochschuleModel;
-
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -189,7 +188,6 @@ public class VolkshochschuleView {
    	 // Aufruf des Controls zum Schreiben des Freizeitbads in die
    	 // Datei des vorgegebenen Typs.
    	control.leseAusDatei(typ);
-   	
    
    }
 
