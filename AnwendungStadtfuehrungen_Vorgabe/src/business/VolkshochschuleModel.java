@@ -40,6 +40,18 @@ public class VolkshochschuleModel {
         ReaderCreator readerCreator = new ConcreteReaderCreator();
         ReaderProduct reader = readerCreator.factoryMethod("csv");
         this.kurse=reader.leseAusDatei();
+        
+        //if (kurse != null && kurse.length > 0) {
+            //this.volkshochschulkurs = kurse[0];
+            //System.out.println("CSV-Datei erfolgreich eingelesen!\n");
+            //for (Volkshochschulkurs kurs : kurse) {
+                //if (kurs != null) {
+                   // System.out.println(kurs.gibVolkshochschuleZurueck(' '));
+                //}
+            //}
+       // } else {
+           // System.out.println("Keine Kurse gefunden!");
+	//}
 	}
    
 	

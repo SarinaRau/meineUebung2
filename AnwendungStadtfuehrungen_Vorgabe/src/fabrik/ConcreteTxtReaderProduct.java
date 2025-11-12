@@ -31,6 +31,7 @@ public class ConcreteTxtReaderProduct extends ReaderProduct {
         ein.close();
 
         Volkshochschulkurs[] ergebnis = new Volkshochschulkurs[anzahl];
+        System.arraycopy(kurse, 0, ergebnis, 0, anzahl);
         return ergebnis;
 	}
 	
